@@ -33,4 +33,4 @@ const genreApi = apiSlice.injectEndpoints({
 })
 
 export {genreApi};
-export const {useAllGenresQuery, useCreateGenreMutation, useDeleteGenreMutation, useReadGenreQuery, useUpdateGenreMutation} = genreApi;
+export const {useAllGenresQuery, useCreateGenreMutation, useDeleteGenreMutation, useUpdateGenreMutation} = genreApi;

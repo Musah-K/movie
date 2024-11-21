@@ -31,7 +31,14 @@ export const apiSlice = createApi({
                 body:data,
             }),
         }),
+
+        getUsers: builder.query({
+            query:()=>({
+                url: USERS_URL,
+            })
+        }),
+
     }),
 });
 
-export const {useLoginMutation, useRegisterMutation, useLogoutApiMutation, useUpdateProfileMutation} =apiSlice
+export const {useLoginMutation, useRegisterMutation, useLogoutApiMutation, useUpdateProfileMutation, useGetUsersQuery } =apiSlice

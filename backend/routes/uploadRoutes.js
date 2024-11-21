@@ -4,6 +4,8 @@ import express from 'express';
 import multer from 'multer';
 
 const router  = express.Router();
+
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -44,8 +46,8 @@ router.post('/',(req, res)=>{
             res.status(400).send({message: err.message});
         }else if(req.file){
             res.status(200).send({
-                message:"Message uploaded successifully",
-                image: `/${req.file.path}`
+                message:"Image uploaded successifully",
+                image: `/uploads\\${req.file.filename}`
             });
         }else{
             res.status(400).send({message: "No image file provided"});

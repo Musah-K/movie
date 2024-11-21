@@ -1,12 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Header from './Movies/Header';
+import MoviesContainerPage from './Movies/MoviesContainerPage';
 
 const Home = () => {
-const {userInfo} = useSelector(state=>state.auth);
+
 
   return (
-    <div>Welcome {userInfo?userInfo.username: "User"}</div>
+    <> 
+      <Header />
+
+      <section className='mt-[5rem]'>
+        <MoviesContainerPage />
+      </section>
+    </>
   )
 }
 
-export default Home
+export default Home;

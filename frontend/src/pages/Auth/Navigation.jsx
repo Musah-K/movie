@@ -29,7 +29,7 @@ const Navigation = () => {
   }
 
   return (
-    <div className='fixed bottom-10 left-[2rem] tramsform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] mb-[2rem] rounded '>
+    <div className='fixed bottom-10 left-[1rem] tramsform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] mb-[2rem] rounded '>
         <section className='flex justify-between items-center'>
           <div className='flex justify-center items-center mb-[2rem]'>
             <Link to="/" className='flex items-center transition-transform transform hover:translate-x-2'>

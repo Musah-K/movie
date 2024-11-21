@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {useCreateGenreMutation, useUpdateGenreMutation, useDeleteGenreMutation, useAllGenresQuery} from '../../App/api/genreApi';
 import GenreForm from '../../components/GenreForm';
 import Modal from '../../components/Modal';
@@ -15,6 +15,7 @@ const GenreList = () => {
     const [createGenre] = useCreateGenreMutation();
     const [updateGenre] = useUpdateGenreMutation();
     const [deleteGenre] = useDeleteGenreMutation();
+    refetch();
 
     const handleCreateGenre = async(e)=> {
       e.preventDefault();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { useLoginMutation } from '../../app/api/apiSlice';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import { setCredentials } from '../../app/features/auth/authSlice';
 
@@ -45,12 +45,13 @@ const Login = () => {
         <form className='container w-[40rem]' onSubmit={handleLogin} >
           <div className='my-[2rem]'>
             <label htmlFor="email" className='block text-sm font-medium text-white'>Enter email</label>
+
             <input type="email" 
             id="email"
             placeholder='Email'
-            className='p-1'
             value={email}
-            onChange={(e)=>setEmail(e.target.value)} />
+            onChange={(e)=>setEmail(e.target.value)}
+            className='mt-1 p-1 border rounded w-full' />
           </div>
 
           <div className='my-[2rem]'>
@@ -58,13 +59,20 @@ const Login = () => {
             <input type="password" 
             id="password"
             placeholder='Passcode'
-            className='p-1'
             value={password}
-            onChange={(e)=> setPassword(e.target.value)} />
+            onChange={(e)=> setPassword(e.target.value)}
+            className='mt-1 p-1 border rounded w-full' />
           </div>
           <button className='bg-teal-500 text-white py-2 px-4 rounded tracking-widest hover:bg-teal-300 cursor-pointer'
           disabled={isLoading}>{isLoading?"Loggin in...":"Login"}</button>
         </form>
+
+        <div className="mt-4">
+          <p className="text-white">
+            Dont have an account? {" "} <Link to='/register' className='text-teal-500 hover:underline'>Register</Link>
+          </p>
+        </div>
+
       </div>
     </div>
   )
