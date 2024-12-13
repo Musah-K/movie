@@ -43,15 +43,24 @@ const Navigation = () => {
             </Link>
           </div>
           <div className='relative'>
-            <button onClick={toggleDropdown} className='text-gray-800 focus:outline-none'>
-              {userInfo?(<span className='text-white'>{userInfo.username}</span>):(<></>)}
-              {userInfo && (<FaChevronDown
-      className={`h-4 w-4 ml-1 transition-transform duration-200 ${
-        dropdownOpen ? 'transform rotate-180' : ''
-      }`}
-      color="white"
-    />)}
-            </button>
+          <button 
+            onClick={toggleDropdown}
+            className='text-gray-800 focus:outline-none'>
+            {/* Ensure userInfo.username is valid */}
+            {userInfo && typeof userInfo.username === 'string' ? (
+              <span className='text-white'>{userInfo.username}</span>
+            ) : null}
+            
+            {userInfo && (
+              <FaChevronDown
+                className={`h-4 w-4 ml-1 transition-transform duration-200 ${
+                  dropdownOpen ? 'transform rotate-180' : ''
+                }`}
+                color="white"
+              />
+            )}
+          </button>
+
 
             {dropdownOpen && userInfo && (
               <ul className={`absolute right-0 mt-2 mr-14 w-[10rem] space-y-2 bg-white text-gray-600 ${!userInfo.isAdmin ? "-top-20": "-top-24"}`}>
